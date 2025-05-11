@@ -103,5 +103,12 @@ def main():
         print("Erro: O labirinto deve conter um ponto inicial 'S' e um final 'E'.")
         return
 
-if _name_ == "_main_":
+    path = a_star(maze, start, end)
+    if path is None:
+        print("Sem solução")
+    else:
+        print_path_coordinates(path, start, end)
+        print_maze_with_path(maze, path)
+
+if __name__ == "__main__":
     main()

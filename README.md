@@ -36,4 +36,66 @@ O robô pode se mover para cima, baixo, esquerda ou direita, desde que não coli
 `Heurística (h(n))`: estimativa da distância até o destino. Neste projeto, usamos a distância de Manhattan:
 `h(n) = |x_atual - x_final| + |y_atual - y_final|`
 
-`A*` escolhe sempre o próximo nó com menor valor de `f(n) = g(n) + h(n)`, garantindo assim o menor caminho possível.
+`A*` escolhe sempre o próximo nó com menor valor de `f(n) = g(n) + h(n)`, garantindo assim o menor caminho possível. 
+
+## Como Executar
+
+- Pré-requisitos
+
+    - Python 3.x instalado
+
+### Passos
+
+- Clone este repositório ou copie o arquivo main.py.
+
+- Execute o script:
+    -   shell
+        python main.py
+        
+
+- Digite o labirinto linha por linha, separando os elementos por espaço. Exemplo:
+
+    shell
+    S 0 1 0 0
+    0 0 1 0 1
+    1 0 1 0 0
+    1 0 0 E 1
+    
+
+- Após digitar todas as linhas, pressione Enter em uma linha vazia para finalizar a entrada.
+
+### O programa exibirá:
+
+- O menor caminho encontrado (em coordenadas)
+
+- O labirinto com o caminho destacado
+
+### Exemplo de Entrada e Saída
+
+- Entrada:
+
+    shell
+    S 0 1 0 0
+    0 0 1 0 1
+    1 0 1 0 0
+    1 0 0 E 1
+    
+
+- Saída:
+
+    shell
+    Menor caminho (em coordenadas):
+    ['s(0, 0)', '(1, 0)', '(1, 1)', '(2, 1)', '(3, 1)', '(3, 2)', 'e(3, 3)']
+
+
+    Labirinto com o caminho destacado:
+    S 0 1 0 0
+    * * 1 0 1
+    1 * 1 0 0
+    1 * * E 1
+    
+
+- Se não houver solução possível, será exibido:
+
+    shell
+    Sem solução

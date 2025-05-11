@@ -68,6 +68,28 @@ def a_star(maze, start, end):
 
     return None  # Sem solução
 
+def print_path_coordinates(path, start, end):
+    coords = []
+    for idx, p in enumerate(path):
+        if p == start:
+            coords.append(f"s{p}")
+        elif p == end:
+            coords.append(f"e{p}")
+        else:
+            coords.append(str(p))
+    print("Menor caminho (em coordenadas):")
+    print(coords)
+
+def print_maze_with_path(maze, path):
+    maze_cp = [row[:] for row in maze]
+    for pos in path:
+        i, j = pos
+        if maze_cp[i][j] not in ['S', 'E']:
+            maze_cp[i][j] = '*'
+    print("\nLabirinto com o caminho destacado:")
+    for row in maze_cp:
+        print(' '.join(row))
+
 def main():
     maze = read_maze()
     if not maze:
